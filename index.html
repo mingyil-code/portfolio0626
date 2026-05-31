@@ -4,7 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ming Yi Lim · Growth & Lifecycle Marketing</title>
-  <meta name="description" content="Lifecycle and growth marketer who builds AI-native marketing systems. 10+ years across B2B, DTC, and B2B2C in APAC.">
+  <meta name="description" content="Growth and lifecycle marketer with 10+ years across B2B, DTC, and B2B2C in APAC. SEO/GEO, lifecycle automation, and AI-native marketing systems.">
+  <!-- Social preview -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://mingyilim.vercel.app">
+  <meta property="og:title"       content="Ming Yi Lim · Growth & Lifecycle Marketing">
+  <meta property="og:description" content="Growth and lifecycle marketer with 10+ years across B2B, DTC, and B2B2C in APAC. SEO/GEO, lifecycle automation, and AI-native marketing systems.">
+  <meta property="og:image"       content="https://mingyilim.vercel.app/og-image.jpg">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Ming Yi Lim · Growth & Lifecycle Marketing">
+  <meta name="twitter:description" content="Growth and lifecycle marketer with 10+ years across B2B, DTC, and B2B2C in APAC.">
+  <meta name="twitter:image"       content="https://mingyilim.vercel.app/og-image.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -560,6 +572,23 @@
     }
 
 
+
+    /* About photo */
+    .about-photo {
+      width: 88px; height: 88px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 15%;
+      border: 2px solid var(--teal);
+      margin-bottom: 24px;
+      display: block;
+      box-shadow: 0 0 0 4px rgba(110,222,227,0.12);
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .about-photo:hover {
+      box-shadow: 0 0 0 8px rgba(110,222,227,0.18);
+      transform: scale(1.04);
+    }
     /* ── BOLD SCROLL ANIMATIONS v3 ── */
 
     /* Case cards — directional entrance, long spring transition */
@@ -902,6 +931,7 @@
     </div>
     <div class="about-grid reveal">
       <div class="about-text">
+        <img src="./photo.jpg" alt="Ming Yi Lim" class="about-photo">
         <p class="lang-fade"
           data-en="I'm a growth and lifecycle marketer with <strong>10+ years</strong> across B2B, DTC, and B2B2C. Based in Singapore, open to remote roles across APAC and beyond."
           data-zh="我是一名拥有<strong>10年以上</strong>B2B、DTC及B2B2C经验的增长与生命周期营销人，现居新加坡，欢迎亚太地区及全球远程机会。">
