@@ -558,10 +558,147 @@
       .about-grid { grid-template-columns: 1fr; gap: 48px; }
       .scroll-hint { display: none; }
     }
+
+
+    /* ── BOLD SCROLL ANIMATIONS v3 ── */
+
+    /* Case cards — directional entrance, long spring transition */
+    .case-card {
+      will-change: transform, opacity;
+      transition:
+        transform  0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        opacity    0.7s ease,
+        border-color 0.3s,
+        background 0.3s;
+    }
+    /* Override old .case-card:hover translateY (JS handles tilt now) */
+    .case-card:hover { transform: none; }
+
+    /* Direction setup via JS custom property */
+    .case-card.slide-init {
+      opacity: 0;
+      transform: translateX(var(--slide-dir, 80px)) scale(0.96) rotateY(var(--slide-rot, 2deg));
+    }
+    .case-card.slide-init.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* Hero stats — spring zoom from tiny */
+    .hero-stat-num {
+      display: inline-block;
+      transform: scale(0.3) translateY(20px);
+      opacity: 0;
+      transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s;
+    }
+    .hero-stats.stats-go .hero-stat-num { transform: none; opacity: 1; }
+    .hero-stat:nth-child(1) .hero-stat-num { transition-delay: 0ms; }
+    .hero-stat:nth-child(3) .hero-stat-num { transition-delay: 120ms; }
+    .hero-stat:nth-child(5) .hero-stat-num { transition-delay: 240ms; }
+    .hero-stat:nth-child(7) .hero-stat-num { transition-delay: 360ms; }
+    .hero-stat-label {
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.5s 0.4s, transform 0.5s 0.4s;
+    }
+    .hero-stats.stats-go .hero-stat-label { opacity: 1; transform: none; }
+
+    /* Stack items — spring pop-in staggered */
+    .stack-item {
+      transform: scale(0.6) translateY(10px);
+      opacity: 0;
+      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.35s;
+    }
+    .stack-item.pop { transform: none; opacity: 1; }
+
+    /* Section title — dramatic slide from below with scale */
+    .section-title {
+      transform: translateY(40px) scaleX(0.92);
+      opacity: 0;
+      transform-origin: left center;
+      transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.8s;
+    }
+    .section-title.visible { transform: none; opacity: 1; }
+
+    /* Reveal — keep for non-card elements but make it smoother */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* Contact headline — zoom from big */
+    .contact-headline {
+      transform: scale(0.88) translateY(20px);
+      opacity: 0;
+      transform-origin: left;
+      transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.8s;
+    }
+    .contact-headline.visible { transform: none; opacity: 1; }
+
+    /* Hero section fades on scroll */
+    #hero { will-change: opacity; }
+
+    /* Section label slide in */
+    .section-label {
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: opacity 0.6s 0.2s, transform 0.6s 0.2s;
+    }
+    .section-label.visible { opacity: 1; transform: none; }
+
+    /* ── ANIMATIONS v2 ── */
+
+    /* Pulsing dot after name */
+    .hero-name span {
+      display: inline-block;
+      animation: dotPulse 2s ease-in-out infinite;
+    }
+    @keyframes dotPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.25; transform: scale(0.8); }
+    }
+
+    /* Typing cursor */
+    .type-cursor {
+      display: inline-block;
+      color: var(--teal);
+      font-weight: 300;
+      margin-left: 1px;
+      animation: cursorBlink 0.65s ease-in-out infinite;
+    }
+    @keyframes cursorBlink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0; }
+    }
+
+    /* Cursor trail particle */
+    .trail-dot {
+      position: fixed;
+      width: 5px; height: 5px;
+      background: var(--teal);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9997;
+      transform: translate(-50%, -50%);
+      animation: trailFade 0.7s ease forwards;
+    }
+    @keyframes trailFade {
+      0%   { opacity: 0.45; transform: translate(-50%, -50%) scale(1); }
+      100% { opacity: 0;    transform: translate(-50%, -50%) scale(0); }
+    }
+
+    /* Card tilt — needs preserve-3d */
+    .case-card { transform-style: preserve-3d; }
+
+    /* Hero tagline — JS controls reveal */
+    .hero-tagline { animation: none !important; opacity: 0; }
   </style>
 </head>
 <body>
 
+  <div id="scrollProgress" style="position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,var(--teal),var(--lime));z-index:300;transition:width 0.08s linear;"></div>
   <div class="bg-mesh"></div>
   <div class="grid-lines"></div>
   <div class="cursor" id="cursor"></div>
@@ -595,22 +732,22 @@
     </p>
     <div class="hero-stats">
       <div class="hero-stat">
-        <span class="hero-stat-num">30k+</span>
+        <span class="hero-stat-num" data-count="30" data-suffix="k+">30k+</span>
         <span class="hero-stat-label lang-fade" data-en="Impressions in 6 months" data-zh="6个月搜索曝光量">Impressions in 6 months</span>
       </div>
       <div class="hero-divider"></div>
       <div class="hero-stat">
-        <span class="hero-stat-num">200%</span>
+        <span class="hero-stat-num" data-count="200" data-suffix="%">200%</span>
         <span class="hero-stat-label lang-fade" data-en="YoY e-commerce growth" data-zh="电商年增长率">YoY e-commerce growth</span>
       </div>
       <div class="hero-divider"></div>
       <div class="hero-stat">
-        <span class="hero-stat-num">13+</span>
+        <span class="hero-stat-num" data-count="13" data-suffix="+">13+</span>
         <span class="hero-stat-label lang-fade" data-en="International markets" data-zh="国际市场">International markets</span>
       </div>
       <div class="hero-divider"></div>
       <div class="hero-stat">
-        <span class="hero-stat-num">10+</span>
+        <span class="hero-stat-num" data-count="10" data-suffix="+">10+</span>
         <span class="hero-stat-label lang-fade" data-en="Years experience" data-zh="年从业经验">Years experience</span>
       </div>
     </div>
@@ -621,7 +758,8 @@
   </section>
 
   <!-- Work -->
-  <section id="work">
+  <section id="work" style="position:relative">
+    <div style="position:absolute;right:-40px;top:60px;font-family:var(--mono);font-size:320px;font-weight:700;color:var(--teal);opacity:0.025;line-height:1;pointer-events:none;user-select:none;z-index:0">01</div>
     <div class="section-header">
       <span class="section-label" data-en="01 / Work" data-zh="01 / 案例">01 / Work</span>
       <h2 class="section-title lang-fade" data-en="Selected Work" data-zh="精选案例">Selected Work</h2>
@@ -631,7 +769,7 @@
     <div class="cases">
 
       <!-- Case 1: Hyve -->
-      <div class="case-card reveal">
+      <div class="case-card">
         <div class="case-top">
           <div class="case-meta">
             <span class="case-company" data-en="HYVE PROMO PTE. LTD. · 2025–Present" data-zh="HYVE PROMO PTE. LTD. · 2025–至今">HYVE PROMO PTE. LTD. · 2025–Present</span>
@@ -640,7 +778,7 @@
           </div>
           <div class="case-metrics">
             <div class="metric">
-              <span class="metric-num teal">30k+</span>
+              <span class="metric-num teal" data-count="30" data-suffix="k+">30k+</span>
               <span class="metric-label lang-fade" data-en="impressions in 6 months" data-zh="6个月搜索曝光量">impressions in 6 months</span>
             </div>
             <div class="metric">
@@ -648,11 +786,11 @@
               <span class="metric-label lang-fade" data-en="cited in Perplexity" data-zh="Perplexity引用位置">cited in Perplexity</span>
             </div>
             <div class="metric">
-              <span class="metric-num">6</span>
+              <span class="metric-num" data-count="6" data-suffix="">6</span>
               <span class="metric-label lang-fade" data-en="lifecycle flows built" data-zh="生命周期流程">lifecycle flows built</span>
             </div>
             <div class="metric">
-              <span class="metric-num">7</span>
+              <span class="metric-num" data-count="7" data-suffix="">7</span>
               <span class="metric-label lang-fade" data-en="APAC markets" data-zh="亚太市场">APAC markets</span>
             </div>
           </div>
@@ -674,7 +812,7 @@
       </div>
 
       <!-- Case 2: Best World -->
-      <div class="case-card reveal">
+      <div class="case-card">
         <div class="case-top">
           <div class="case-meta">
             <span class="case-company" data-en="BEST WORLD INTERNATIONAL LTD · 2021–2025" data-zh="BEST WORLD INTERNATIONAL LTD · 2021–2025">BEST WORLD INTERNATIONAL LTD · 2021–2025</span>
@@ -683,19 +821,19 @@
           </div>
           <div class="case-metrics">
             <div class="metric">
-              <span class="metric-num lime">+100%</span>
+              <span class="metric-num lime" data-count="100" data-prefix="+" data-suffix="%">+100%</span>
               <span class="metric-label lang-fade" data-en="customer acquisition" data-zh="客户获取增长">customer acquisition</span>
             </div>
             <div class="metric">
-              <span class="metric-num lime">+50%</span>
+              <span class="metric-num lime" data-count="50" data-prefix="+" data-suffix="%">+50%</span>
               <span class="metric-label lang-fade" data-en="international revenue" data-zh="国际营收增长">international revenue</span>
             </div>
             <div class="metric">
-              <span class="metric-num">6+</span>
+              <span class="metric-num" data-count="6" data-suffix="+">6+</span>
               <span class="metric-label lang-fade" data-en="new markets launched" data-zh="新市场拓展">new markets launched</span>
             </div>
             <div class="metric">
-              <span class="metric-num">-50%</span>
+              <span class="metric-num" data-count="50" data-prefix="-" data-suffix="%">-50%</span>
               <span class="metric-label lang-fade" data-en="lead time reduction" data-zh="交付周期缩短">lead time reduction</span>
             </div>
           </div>
@@ -716,7 +854,7 @@
       </div>
 
       <!-- Case 3: Fill Apac -->
-      <div class="case-card reveal">
+      <div class="case-card">
         <div class="case-top">
           <div class="case-meta">
             <span class="case-company" data-en="FILL APAC PTE. LTD. · 2019–2021" data-zh="FILL APAC PTE. LTD. · 2019–2021">FILL APAC PTE. LTD. · 2019–2021</span>
@@ -725,11 +863,11 @@
           </div>
           <div class="case-metrics">
             <div class="metric">
-              <span class="metric-num teal">200%</span>
+              <span class="metric-num teal" data-count="200" data-suffix="%">200%</span>
               <span class="metric-label lang-fade" data-en="YoY revenue growth" data-zh="年营收增长">YoY revenue growth</span>
             </div>
             <div class="metric">
-              <span class="metric-num teal">+50%</span>
+              <span class="metric-num teal" data-count="50" data-prefix="+" data-suffix="%">+50%</span>
               <span class="metric-label lang-fade" data-en="ROAS improvement" data-zh="广告回报率提升">ROAS improvement</span>
             </div>
           </div>
@@ -755,7 +893,8 @@
   </section>
 
   <!-- About -->
-  <section id="about">
+  <section id="about" style="position:relative">
+    <div style="position:absolute;left:-60px;top:40px;font-family:var(--mono);font-size:320px;font-weight:700;color:var(--teal);opacity:0.025;line-height:1;pointer-events:none;user-select:none;z-index:0">02</div>
     <div class="section-header">
       <span class="section-label" data-en="02 / About" data-zh="02 / 关于">02 / About</span>
       <h2 class="section-title lang-fade" data-en="About" data-zh="关于我">About</h2>
@@ -821,7 +960,8 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact">
+  <section id="contact" style="position:relative">
+    <div style="position:absolute;right:-20px;top:20px;font-family:var(--mono);font-size:260px;font-weight:700;color:var(--teal);opacity:0.025;line-height:1;pointer-events:none;user-select:none;z-index:0">03</div>
     <h2 class="contact-headline reveal lang-fade"
       data-en="Let's build <em>something.</em>"
       data-zh="期待与您<em>合作。</em>">
@@ -848,28 +988,70 @@
   </section>
 
   <script>
-    // Custom cursor
+    // ── CUSTOM CURSOR ─────────────────────────────────────
     const cursor = document.getElementById('cursor');
-    const ring = document.getElementById('cursorRing');
+    const ring   = document.getElementById('cursorRing');
     let mx = 0, my = 0, rx = 0, ry = 0;
     document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-    function animateCursor() {
+    (function loop() {
       cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
       rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
       ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-      requestAnimationFrame(animateCursor);
-    }
-    animateCursor();
+      requestAnimationFrame(loop);
+    })();
     document.querySelectorAll('a, button, .case-card').forEach(el => {
-      el.addEventListener('mouseenter', () => { ring.style.width = '56px'; ring.style.height = '56px'; cursor.style.transform = 'translate(-50%,-50%) scale(1.8)'; });
-      el.addEventListener('mouseleave', () => { ring.style.width = '36px'; ring.style.height = '36px'; cursor.style.transform = 'translate(-50%,-50%) scale(1)'; });
+      el.addEventListener('mouseenter', () => {
+        ring.style.width = '56px'; ring.style.height = '56px';
+        cursor.style.transform = 'translate(-50%,-50%) scale(1.8)';
+      });
+      el.addEventListener('mouseleave', () => {
+        ring.style.width = '36px'; ring.style.height = '36px';
+        cursor.style.transform = 'translate(-50%,-50%) scale(1)';
+      });
     });
 
-    // Nav scroll
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); });
+    // ── CURSOR TRAIL ──────────────────────────────────────
+    let trailT = 0;
+    document.addEventListener('mousemove', e => {
+      if (Date.now() - trailT < 32) return;
+      trailT = Date.now();
+      const d = document.createElement('div');
+      d.className = 'trail-dot';
+      d.style.left = e.clientX + 'px'; d.style.top = e.clientY + 'px';
+      document.body.appendChild(d);
+      setTimeout(() => d.remove(), 720);
+    });
 
-    // Language toggle
+    // ── SCROLL PROGRESS ───────────────────────────────────
+    const progressBar = document.getElementById('scrollProgress');
+    function onScroll() {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.width = (window.scrollY / max * 100) + '%';
+
+      // ── HERO PARALLAX + FADE ─────────────────────────────
+      const y = window.scrollY;
+      const vh = window.innerHeight;
+      if (y < vh * 1.2) {
+        const pct = y / vh;
+        heroName.style.transform    = `translateY(${y * 0.22}px)`;
+        heroTag.style.transform     = `translateY(${y * 0.12}px)`;
+        heroNick.style.transform    = `translateY(${y * 0.18}px)`;
+        heroSection.style.opacity   = Math.max(0, 1 - pct * 1.4);
+      }
+    }
+    const heroSection = document.getElementById('hero');
+    const heroName    = document.querySelector('.hero-name');
+    const heroTag     = document.querySelector('.hero-tag');
+    const heroNick    = document.querySelector('.hero-nickname');
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // ── NAV SCROLL ────────────────────────────────────────
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // ── LANGUAGE TOGGLE ───────────────────────────────────
     let currentLang = 'en';
     function setLang(lang) {
       if (lang === currentLang) return;
@@ -887,12 +1069,147 @@
       }, 250);
     }
 
-    // Scroll reveal
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-    reveals.forEach(el => observer.observe(el));
+    // ── DIRECTIONAL CARD ENTRANCE ─────────────────────────
+    document.querySelectorAll('.cases .case-card').forEach((card, i) => {
+      const dir = i % 2 === 0 ? '80px' : '-80px';
+      const rot = i % 2 === 0 ? '2deg' : '-2deg';
+      card.style.setProperty('--slide-dir', dir);
+      card.style.setProperty('--slide-rot', rot);
+      card.classList.add('slide-init');
+      card.style.transitionDelay = (i * 100) + 'ms';
+    });
+
+    // ── COUNT-UP ──────────────────────────────────────────
+    function animateCount(el) {
+      const target = parseInt(el.dataset.count);
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      const dur    = 1400;
+      const t0     = performance.now();
+      (function tick(now) {
+        const p  = Math.min((now - t0) / dur, 1);
+        const ep = 1 - Math.pow(1 - p, 3);
+        el.textContent = prefix + Math.round(ep * target) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      })(t0);
+    }
+
+    // ── HERO STATS SPRING ZOM-IN ──────────────────────────
+    const heroStats = document.querySelector('.hero-stats');
+    const statsObs = new IntersectionObserver(es => {
+      es.forEach(e => {
+        if (e.isIntersecting) {
+          heroStats.classList.add('stats-go');
+          // Trigger count-up for hero stat numbers
+          heroStats.querySelectorAll('[data-count]').forEach(el => animateCount(el));
+          statsObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    statsObs.observe(heroStats);
+
+    // ── COUNT-UP FOR CASE METRICS ─────────────────────────
+    const countObs = new IntersectionObserver(es => {
+      es.forEach(e => {
+        if (e.isIntersecting && !e.target.closest('.hero-stats')) {
+          animateCount(e.target);
+          countObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.6 });
+    document.querySelectorAll('.case-card [data-count]').forEach(el => countObs.observe(el));
+
+    // ── STACK ITEMS SPRING POP ────────────────────────────
+    const stackObs = new IntersectionObserver(es => {
+      es.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('.stack-item').forEach((item, i) => {
+            setTimeout(() => item.classList.add('pop'), i * 35);
+          });
+          stackObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    const stackGrid = document.querySelector('.stack-grid');
+    if (stackGrid) stackObs.observe(stackGrid);
+
+    // ── MAGNETIC CONTACT BUTTONS ──────────────────────────
+    document.querySelectorAll('.contact-link').forEach(btn => {
+      btn.addEventListener('mousemove', e => {
+        const r  = btn.getBoundingClientRect();
+        const dx = (e.clientX - (r.left + r.width  / 2)) * 0.28;
+        const dy = (e.clientY - (r.top  + r.height / 2)) * 0.28;
+        btn.style.transform = `translate(${dx}px,${dy}px) scale(1.04)`;
+      });
+      btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+    });
+
+    // ── CARD 3D TILT ──────────────────────────────────────
+    document.querySelectorAll('.case-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        if (!card.classList.contains('visible')) return;
+        const r  = card.getBoundingClientRect();
+        const dx = (e.clientX - (r.left + r.width  / 2)) / (r.width  / 2);
+        const dy = (e.clientY - (r.top  + r.height / 2)) / (r.height / 2);
+        card.style.transform = `perspective(1400px) rotateY(${dx * 4}deg) rotateX(${-dy * 2}deg) translateY(-4px) scale(1.01)`;
+      });
+      card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+    });
+
+    // ── TYPING EFFECT (hero tagline) ──────────────────────
+    (function() {
+      const el   = document.querySelector('.hero-tagline');
+      const html = el.getAttribute('data-en') || el.innerHTML;
+      function parse(s) {
+        const out = []; let bold = false, i = 0;
+        while (i < s.length) {
+          if (s.startsWith('<strong>', i))       { bold = true;  i += 8; }
+          else if (s.startsWith('</strong>', i)) { bold = false; i += 9; }
+          else { out.push({ ch: s[i], bold }); i++; }
+        }
+        return out;
+      }
+      function build(segs, n) {
+        let h = '', inB = false;
+        for (let i = 0; i < Math.min(n, segs.length); i++) {
+          const { ch, bold } = segs[i];
+          if (bold && !inB)  { h += '<strong>'; inB = true; }
+          if (!bold && inB)  { h += '</strong>'; inB = false; }
+          h += ch === '&' ? '&amp;' : ch;
+        }
+        if (inB) h += '</strong>';
+        return h;
+      }
+      const segs = parse(html);
+      el.innerHTML = '';
+      el.style.opacity = '1';
+      setTimeout(() => {
+        let idx = 0;
+        const CURSOR = '<span class="type-cursor">|</span>';
+        (function type() {
+          el.innerHTML = build(segs, idx) + (idx <= segs.length ? CURSOR : '');
+          idx++;
+          if (idx <= segs.length) setTimeout(type, idx < 8 ? 50 : 16);
+          else setTimeout(() => { el.innerHTML = build(segs, segs.length); }, 900);
+        })();
+      }, 980);
+    })();
+
+    // ── MASTER INTERSECTION OBSERVER ─────────────────────
+    const masterObs = new IntersectionObserver(es => {
+      es.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          masterObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    // Observe everything that needs reveal
+    document.querySelectorAll(
+      '.reveal, .slide-init, .section-title, .section-label, .contact-headline'
+    ).forEach(el => masterObs.observe(el));
+
   </script>
 
 </body>
