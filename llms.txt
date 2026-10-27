@@ -4,9 +4,14 @@
 
 ## Selected work
 
-- Hyve Promo (2025–2026): Built the marketing stack across 7 APAC markets. Took a new domain from zero to 30,000+ search impressions in six months and earned a cited-source position in Perplexity for category queries. Built six Klaviyo lifecycle flows (welcome, cart and browse abandonment, post-purchase, winback).
-- Best World International (2021–2025): Go-to-market execution across 13+ international regions, including Australia and the USA.
+- Hyve Promo (2025–2026): Built the marketing stack across 7 APAC markets. Took a new domain from zero to 30,000+ search impressions in six months and earned a cited-source position in Perplexity for category queries. Built six Klaviyo lifecycle flows and migrated the HubSpot database into Klaviyo, suppressing about 40% of the list as inactive before the first send; bounce rate stayed under 0.8%.
+- Best World International (2021–2025): Localised marketing and go-to-market execution across 13+ international regions, including Australia and the USA. Marketed paid events and conventions, including the 2023 North American Convention in Las Vegas (about 2,000 participants against a 1,000–1,500 target).
 - Fill Apac (2019–2021): Grew e-commerce revenue 200% year on year and improved ROAS 50%.
+
+## Education
+
+- Bachelor of Commerce (Accounting), University of Wollongong
+- Marketing Week Certificate, 2025
 
 ## Links
 

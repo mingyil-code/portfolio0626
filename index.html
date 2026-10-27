@@ -57,7 +57,7 @@
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: clip; }
 
     body {
       font-family: var(--sans);
@@ -871,15 +871,15 @@
               <span class="metric-label lang-fade" data-en="lifecycle flows built" data-zh="生命周期流程">lifecycle flows built</span>
             </div>
             <div class="metric">
-              <span class="metric-num" data-count="7" data-suffix="">7</span>
-              <span class="metric-label lang-fade" data-en="APAC markets" data-zh="亚太市场">APAC markets</span>
+              <span class="metric-num">&lt;0.8%</span>
+              <span class="metric-label lang-fade" data-en="bounce rate from first send" data-zh="首次发送起退信率">bounce rate from first send</span>
             </div>
           </div>
         </div>
         <p class="case-body lang-fade"
-          data-en="Built the full marketing stack from scratch across 7 APAC markets, briefing and managing external agencies and partners to deliver across every channel. Designed a <strong>GEO/AI-search visibility system</strong> that took a new domain from zero to 30,000+ impressions and earned a cited-source position in Perplexity for category queries. Shipped bulk SEO through the <strong>Shopify Admin API</strong> instead of editing pages by hand, codifying rules into version-controlled standards with Claude Code and MCP that contractors and agency partners now run directly. Built the Klaviyo lifecycle program across 7 markets — welcome, cart and browse abandonment, post-purchase, and winback flows with segmentation."
-          data-zh="在亚太7个市场从零搭建完整营销技术栈，统筹外部代理商与合作伙伴覆盖所有渠道。设计了<strong>GEO/AI搜索可见性系统</strong>，使新域名从零增长至30,000+次搜索曝光，并在Perplexity类别查询中获得引用来源位置。通过<strong>Shopify Admin API</strong>批量处理SEO，而非逐页手动编辑，利用Claude Code与MCP将规则固化为版本控制标准，交由代理商与合作伙伴直接执行运行。在亚太7个市场构建Klaviyo生命周期程序——包含欢迎、购物车/浏览放弃、购后及召回流程，并配置细分策略。">
-          Built the full marketing stack from scratch across 7 APAC markets, briefing and managing external agencies and partners to deliver across every channel. Designed a <strong>GEO/AI-search visibility system</strong> that took a new domain from zero to 30,000+ impressions and earned a cited-source position in Perplexity for category queries. Shipped bulk SEO through the <strong>Shopify Admin API</strong> instead of editing pages by hand, codifying rules into version-controlled standards with Claude Code and MCP that contractors and agency partners now run directly. Built the Klaviyo lifecycle program across 7 markets — welcome, cart and browse abandonment, post-purchase, and winback flows with segmentation.
+          data-en="Built the full marketing stack from scratch across 7 APAC markets for a mostly B2B customer base, briefing and managing external agencies and partners to deliver across every channel. Designed a <strong>GEO/AI-search visibility system</strong> that took a new domain from zero to 30,000+ impressions and earned a cited-source position in Perplexity for category queries, backed by backlink growth through outreach and digital PR. Shipped bulk SEO through the <strong>Shopify Admin API</strong> instead of editing pages by hand, codifying rules into version-controlled standards with Claude Code and MCP that contractors and agency partners now run directly, so the system ran without me as the bottleneck. Built the Klaviyo lifecycle programme across 7 markets: sign-up and activation, welcome, cart and browse abandonment, post-purchase and winback flows with behavioural segmentation. Built HubSpot reporting syncs that the sales team adopted for their own pipeline reporting."
+          data-zh="面向以B2B为主的客户群，在亚太7个市场从零搭建完整营销技术栈，统筹外部代理商与合作伙伴覆盖所有渠道。设计了<strong>GEO/AI搜索可见性系统</strong>，使新域名从零增长至30,000+次搜索曝光，并在Perplexity类别查询中获得引用来源位置，同时通过外联与数字公关增长外链。通过<strong>Shopify Admin API</strong>批量处理SEO，而非逐页手动编辑，利用Claude Code与MCP将规则固化为版本控制标准，交由代理商与合作伙伴直接执行，使系统运行不依赖于我个人。在亚太7个市场构建Klaviyo生命周期体系：注册与激活、欢迎、购物车/浏览放弃、购后及召回流程，并配置行为细分。搭建的HubSpot报表同步被销售团队采纳，用于其销售管道报告。">
+          Built the full marketing stack from scratch across 7 APAC markets for a mostly B2B customer base, briefing and managing external agencies and partners to deliver across every channel. Designed a <strong>GEO/AI-search visibility system</strong> that took a new domain from zero to 30,000+ impressions and earned a cited-source position in Perplexity for category queries, backed by backlink growth through outreach and digital PR. Shipped bulk SEO through the <strong>Shopify Admin API</strong> instead of editing pages by hand, codifying rules into version-controlled standards with Claude Code and MCP that contractors and agency partners now run directly, so the system ran without me as the bottleneck. Built the Klaviyo lifecycle programme across 7 markets: sign-up and activation, welcome, cart and browse abandonment, post-purchase and winback flows with behavioural segmentation. Built HubSpot reporting syncs that the sales team adopted for their own pipeline reporting.
         </p>
         <div class="proof-panel">
           <div class="proof-label lang-fade" data-en="How this was built" data-zh="实现方式">How this was built</div>
@@ -889,12 +889,22 @@
             AI search engines like Perplexity don't rank pages the way Google does — they synthesise an answer and cite sources that clearly demonstrate expertise on the topic. Instead of writing for keywords, I restructured content around the actual questions someone would ask an AI assistant: clear topic clusters, direct answers up front, and structured data that signals exactly what the page is authoritative on. I also cleaned up the technical foundations most AI crawlers rely on to trust a source — internal linking, clean information architecture, and consistent E-E-A-T signals throughout. Because this was shipped across a whole domain rather than page by page, it was built as a documented ruleset in Claude Code, so every new piece of content followed the same standard automatically.
           </p>
         </div>
+        <div class="proof-panel">
+          <div class="proof-label lang-fade" data-en="The Klaviyo fix" data-zh="Klaviyo关键修复">The Klaviyo fix</div>
+          <p class="lang-fade"
+            data-en="When migrating the HubSpot database into Klaviyo, business contacts, customers and long-inactive contacts were all mixed into one list. Sending to it as-is would have damaged sender reputation from the first campaign. Before the first send, I built segments separating recent buyers and engaged contacts from everyone else, <strong>suppressed about 40% of the list as inactive</strong>, and sent only to the engaged audience. I also set up sending domain authentication and edited the HTML/CSS of the email templates directly. Bounce rate stayed <strong>under 0.8%</strong> from the first send, and click rate settled at <strong>2.4%</strong>."
+            data-zh="将HubSpot数据库迁移至Klaviyo时，企业联系人、客户与长期不活跃联系人混在同一列表中。若直接发送，首次营销活动就会损害发件人信誉。在首次发送前，我建立细分，将近期购买者与活跃联系人与其他联系人区分开，<strong>将约40%的不活跃联系人设为抑制</strong>，仅向活跃受众发送。我还完成了发件域名认证，并直接编辑邮件模板的HTML/CSS。自首次发送起，退信率始终<strong>低于0.8%</strong>，点击率稳定在<strong>2.4%</strong>。">
+            When migrating the HubSpot database into Klaviyo, business contacts, customers and long-inactive contacts were all mixed into one list. Sending to it as-is would have damaged sender reputation from the first campaign. Before the first send, I built segments separating recent buyers and engaged contacts from everyone else, <strong>suppressed about 40% of the list as inactive</strong>, and sent only to the engaged audience. I also set up sending domain authentication and edited the HTML/CSS of the email templates directly. Bounce rate stayed <strong>under 0.8%</strong> from the first send, and click rate settled at <strong>2.4%</strong>.
+          </p>
+        </div>
         <div class="tags">
           <span class="tag accent">GEO / AI Search</span>
           <span class="tag accent">Lifecycle Automation</span>
           <span class="tag accent">Shopify Admin API</span>
           <span class="tag accent">Claude Code · MCP</span>
           <span class="tag">Klaviyo</span>
+          <span class="tag">Deliverability</span>
+          <span class="tag">HubSpot</span>
           <span class="tag">Shopify Plus</span>
           <span class="tag">SEO</span>
         </div>
@@ -919,7 +929,7 @@
             </div>
             <div class="metric">
               <span class="metric-num" data-count="6" data-suffix="+">6+</span>
-              <span class="metric-label lang-fade" data-en="new markets launched" data-zh="新市场拓展">new markets launched</span>
+              <span class="metric-label lang-fade" data-en="market launches delivered" data-zh="新市场落地执行">market launches delivered</span>
             </div>
             <div class="metric">
               <span class="metric-num" data-count="50" data-prefix="-" data-suffix="%">-50%</span>
@@ -928,9 +938,9 @@
           </div>
         </div>
         <p class="case-body lang-fade"
-          data-en="Led go-to-market execution across <strong>13+ international regions</strong> including Australia and the USA. <strong>Doubled customer acquisition (+100%)</strong> through targeted multi-market campaigns and distributor channel management. Launched into 6+ new regions, lifting international revenue 50% through coordinated market-entry execution. Redesigned cross-team order-tracking workflows and standardised handoffs, cutting lead times 50% across regions."
-          data-zh="主导澳大利亚、美国等13+个国际市场的市场进入与商业化执行。通过定向多市场营销活动和分销商渠道管理，实现客户获取翻倍（+100%）。拓展6+个新市场，通过协同市场进入执行将国际营收提升50%。重新设计跨团队订单追踪工作流并标准化交接流程，使各地区交付周期缩短50%。">
-          Led go-to-market execution across <strong>13+ international regions</strong> including Australia and the USA. <strong>Doubled customer acquisition (+100%)</strong> through targeted multi-market campaigns and distributor channel management. Launched into 6+ new regions, lifting international revenue 50% through coordinated market-entry execution. Redesigned cross-team order-tracking workflows and standardised handoffs, cutting lead times 50% across regions.
+          data-en="Owned localised marketing and go-to-market execution across <strong>13+ international regions</strong> including Australia and the USA, leading a team of two executives and two interns. <strong>Doubled customer acquisition (+100%)</strong> through targeted multi-market campaigns and distributor onboarding and enablement. Delivered launch execution across 6+ new regions, contributing to a 50% lift in international revenue. Redesigned cross-team order-tracking workflows and standardised handoffs, cutting lead times 50% across regions."
+          data-zh="负责澳大利亚、美国等13+个国际市场的本地化营销与市场进入执行，带领两名专员和两名实习生。通过定向多市场营销活动及分销商入驻与赋能，实现客户获取翻倍（+100%）。完成6+个新市场的落地执行，助力国际营收提升50%。重新设计跨团队订单追踪工作流并标准化交接流程，使各地区交付周期缩短50%。">
+          Owned localised marketing and go-to-market execution across <strong>13+ international regions</strong> including Australia and the USA, leading a team of two executives and two interns. <strong>Doubled customer acquisition (+100%)</strong> through targeted multi-market campaigns and distributor onboarding and enablement. Delivered launch execution across 6+ new regions, contributing to a 50% lift in international revenue. Redesigned cross-team order-tracking workflows and standardised handoffs, cutting lead times 50% across regions.
         </p>
         <div class="tags">
           <span class="tag accent">B2B Growth</span>
@@ -942,7 +952,56 @@
         </div>
       </div>
 
-      <!-- Case 3: Fill Apac -->
+      <!-- Case 3: Best World events -->
+      <div class="case-card">
+        <div class="case-top">
+          <div class="case-meta">
+            <span class="case-company" data-en="BEST WORLD INTERNATIONAL LTD · 2021–2025" data-zh="BEST WORLD INTERNATIONAL LTD · 2021–2025">BEST WORLD INTERNATIONAL LTD · 2021–2025</span>
+            <h3 class="case-title lang-fade" data-en="Convention &amp; Event Marketing" data-zh="大会与活动营销">Convention &amp; Event Marketing</h3>
+            <span class="case-context lang-fade" data-en="Paid events for a member network · North America, Oceania, Europe &amp; Asia" data-zh="面向会员网络的付费活动 · 北美、大洋洲、欧洲及亚洲">Paid events for a member network · North America, Oceania, Europe &amp; Asia</span>
+          </div>
+          <div class="case-metrics">
+            <div class="metric">
+              <span class="metric-num lime">~2,000</span>
+              <span class="metric-label lang-fade" data-en="Las Vegas 2023 participants" data-zh="2023拉斯维加斯大会参会人数">Las Vegas 2023 participants</span>
+            </div>
+            <div class="metric">
+              <span class="metric-num lime">95%+</span>
+              <span class="metric-label lang-fade" data-en="est. attendance among registrants" data-zh="注册者预估出席率">est. attendance among registrants</span>
+            </div>
+            <div class="metric">
+              <span class="metric-num">5–10+</span>
+              <span class="metric-label lang-fade" data-en="events supported a year" data-zh="每年支持活动场次">events supported a year</span>
+            </div>
+            <div class="metric">
+              <span class="metric-num" data-count="4" data-suffix="">4</span>
+              <span class="metric-label lang-fade" data-en="regions covered" data-zh="覆盖区域">regions covered</span>
+            </div>
+          </div>
+        </div>
+        <p class="case-body lang-fade"
+          data-en="Marketed ticketed workshops, product events and conventions ranging from 30 to 2,000+ participants. For the <strong>2023 North American Convention in Las Vegas</strong>, I spotted stronger-than-expected ticket momentum and proposed raising the target from 1,000–1,500 towards 2,000, then coordinated feasibility with the production team. It closed at about 2,000 participants. Ran pre-event promotion (early-bird offers, ticket bundles, participation incentives) and bilingual English-Chinese communications, tracked registrations on the e-commerce platform, and built dashboards on geography, member mix and bundle preferences that showed where to push next."
+          data-zh="负责从30人到2,000+人规模的付费工作坊、产品活动及大会营销。在<strong>2023年拉斯维加斯北美大会</strong>中，我发现售票势头强于预期，提议将目标从1,000–1,500人提高至约2,000人，并与制作团队协调可行性，最终参会人数约2,000人。负责会前推广（早鸟优惠、门票套装、参与激励）及中英双语沟通，在电商平台追踪注册数据，并搭建地区、会员构成及套装偏好看板，指导下一步推广重点。">
+          Marketed ticketed workshops, product events and conventions ranging from 30 to 2,000+ participants. For the <strong>2023 North American Convention in Las Vegas</strong>, I spotted stronger-than-expected ticket momentum and proposed raising the target from 1,000–1,500 towards 2,000, then coordinated feasibility with the production team. It closed at about 2,000 participants. Ran pre-event promotion (early-bird offers, ticket bundles, participation incentives) and bilingual English-Chinese communications, tracked registrations on the e-commerce platform, and built dashboards on geography, member mix and bundle preferences that showed where to push next.
+        </p>
+        <div class="proof-panel">
+          <div class="proof-label lang-fade" data-en="Beyond the brief" data-zh="超出职责的主动推动">Beyond the brief</div>
+          <p class="lang-fade"
+            data-en="International delegates kept asking the same travel, accommodation and registration questions. I created a <strong>bilingual English-Chinese participant guide</strong> covering logistics end to end, which cut repetitive enquiries. On site, I handled registration, check-in, VIP coordination and international delegations; afterwards, follow-up communications, feedback collection and sales-impact analysis."
+            data-zh="国际参会者反复咨询相同的出行、住宿及注册问题。我编写了一份<strong>中英双语参会指南</strong>，完整覆盖各项后勤安排，减少了重复咨询。现场负责注册、签到、VIP协调及国际代表团接待；会后负责跟进沟通、收集反馈及销售影响分析。">
+            International delegates kept asking the same travel, accommodation and registration questions. I created a <strong>bilingual English-Chinese participant guide</strong> covering logistics end to end, which cut repetitive enquiries. On site, I handled registration, check-in, VIP coordination and international delegations; afterwards, follow-up communications, feedback collection and sales-impact analysis.
+          </p>
+        </div>
+        <div class="tags">
+          <span class="tag accent">Event Marketing</span>
+          <span class="tag accent">Delegate Acquisition</span>
+          <span class="tag">Registration Analytics</span>
+          <span class="tag">Bilingual Comms</span>
+          <span class="tag">Promotions</span>
+        </div>
+      </div>
+
+      <!-- Case 4: Fill Apac -->
       <div class="case-card">
         <div class="case-top">
           <div class="case-meta">
@@ -1007,6 +1066,11 @@
           data-zh="多语言能力：英语、普通话、马来语（流利）；粤语、韩语、日语（工作级）。">
           Multilingual: English, Mandarin, Malay (fluent); Cantonese, Korean, Japanese (working).
         </p>
+        <p class="lang-fade"
+          data-en="Bachelor of Commerce (Accounting), University of Wollongong. Marketing Week Certificate, 2025."
+          data-zh="伍伦贡大学商学学士（会计）。Marketing Week Certificate，2025年。">
+          Bachelor of Commerce (Accounting), University of Wollongong. Marketing Week Certificate, 2025.
+        </p>
         <p class="lang-fade" style="font-size:13px; padding: 10px 14px; border-left: 2px solid var(--teal); background: var(--teal-dim); border-radius: 0 6px 6px 0; color: var(--text); margin-top: 8px;"
           data-en="Currently open to growth, lifecycle, and AI-native marketing roles in Singapore and remote."
           data-zh="目前开放接受新加坡及远程的增长营销、生命周期营销及AI原生营销职位。">
@@ -1025,6 +1089,7 @@
           <span class="stack-item">Make</span>
           <span class="stack-item">n8n</span>
           <span class="stack-item">Google Ads</span>
+          <span class="stack-item">Google Merchant Center</span>
           <span class="stack-item">Meta Ads</span>
           <span class="stack-item">LinkedIn Ads</span>
           <span class="stack-item">GA4</span>
