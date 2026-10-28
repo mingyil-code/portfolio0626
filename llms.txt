@@ -14,6 +14,14 @@
 - Bachelor of Commerce (Accounting), University of Wollongong
 - Mini MBA in Marketing (Certificate), Marketing Week, 2025
 
+## Case studies
+
+- [AI Search & AI-Native Marketing](https://mingyilim.vercel.app/work/geo)
+- [Lifecycle & CRM in Klaviyo](https://mingyilim.vercel.app/work/lifecycle)
+- [Convention & Event Marketing](https://mingyilim.vercel.app/work/events)
+- [APAC Market Expansion](https://mingyilim.vercel.app/work/expansion)
+- [E-Commerce Growth](https://mingyilim.vercel.app/work/ecommerce)
+
 ## Links
 
 - [Portfolio](https://mingyilim.vercel.app/)
