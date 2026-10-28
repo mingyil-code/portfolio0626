@@ -3,21 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ming Yi Lim · Growth & Lifecycle Marketing</title>
+  <title>Ming Yi Lim, Growth &amp; Lifecycle Marketer</title>
   <meta name="description" content="Growth and lifecycle marketer with 12+ years across B2B, DTC, and B2B2C in APAC. SEO/GEO, lifecycle automation, and AI-native marketing systems.">
-  <!-- Social preview -->
+  <link rel="canonical" href="https://mingyilim.vercel.app/">
+  <meta name="theme-color" content="#F6F7F5">
   <meta property="og:type"        content="website">
-  <meta property="og:url"         content="https://mingyilim.vercel.app">
-  <meta property="og:title"       content="Ming Yi Lim · Growth & Lifecycle Marketing">
+  <meta property="og:url"         content="https://mingyilim.vercel.app/">
+  <meta property="og:title"       content="Ming Yi Lim, Growth &amp; Lifecycle Marketer">
   <meta property="og:description" content="Growth and lifecycle marketer with 12+ years across B2B, DTC, and B2B2C in APAC. SEO/GEO, lifecycle automation, and AI-native marketing systems.">
   <meta property="og:image"       content="https://mingyilim.vercel.app/og-image.jpg">
   <meta property="og:image:width"  content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="Ming Yi Lim · Growth & Lifecycle Marketing">
-  <meta name="twitter:description" content="Growth and lifecycle marketer with 12+ years across B2B, DTC, and B2B2C in APAC.">
+  <meta name="twitter:title"       content="Ming Yi Lim, Growth &amp; Lifecycle Marketer">
+  <meta name="twitter:description" content="Growth and lifecycle marketer with 12+ years across B2B, DTC, and B2B2C in APAC. SEO/GEO, lifecycle automation, and AI-native marketing systems.">
   <meta name="twitter:image"       content="https://mingyilim.vercel.app/og-image.jpg">
-  <link rel="canonical" href="https://mingyilim.vercel.app/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -38,7 +39,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@600;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/site.css">
 
   <!-- Google tag (gtag.js) -->
@@ -51,288 +52,151 @@
   </script>
 </head>
 <body>
-
-  <div id="scrollProgress" style="position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,var(--teal),var(--lime));z-index:300;transition:width 0.08s linear;"></div>
-  <div class="bg-mesh"></div>
-  <div class="grid-lines"></div>
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
-
-  <!-- Nav -->
-  <nav id="nav">
-    <a href="#" class="nav-logo">M·Y</a>
-    <ul class="nav-links">
-      <li><a href="#work" data-en="Work" data-zh="案例">Work</a></li>
-      <li><a href="#about" data-en="About" data-zh="关于">About</a></li>
-      <li><a href="#contact" data-en="Contact" data-zh="联系">Contact</a></li>
-    </ul>
-    <div class="lang-toggle">
-      <button class="lang-btn active" id="btnEn" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" id="btnZh" onclick="setLang('zh')">中文</button>
+  <a class="skip" href="#work">Skip to work</a>
+  <header class="topbar">
+    <a href="/" class="brand" aria-label="Ming Yi Lim, home"><span class="seal seal-sm" aria-hidden="true"><span>林</span></span><span class="brand-name">Ming Yi Lim</span></a>
+    <nav class="topnav" aria-label="Main">
+      <a href="#work" data-en="Work" data-zh="案例">Work</a>
+      <a href="#about" data-en="About" data-zh="关于">About</a>
+      <a href="#contact" data-en="Contact" data-zh="联系">Contact</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" id="btnEn" class="active" onclick="setLang('en')">EN</button>
+      <button type="button" id="btnZh" onclick="setLang('zh')" lang="zh-Hans">中文</button>
     </div>
-  </nav>
+  </header>
 
-  <!-- Hero -->
-  <section id="hero">
-    <div class="hero-tag" data-en="Growth &amp; Lifecycle Marketing · AI-Native Systems · APAC" data-zh="增长与生命周期营销 · AI原生系统 · 亚太地区">
-      Growth &amp; Lifecycle Marketing · AI-Native Systems · APAC
-    </div>
-    <div class="hero-id">
-      <img src="/hero-photo.jpg" alt="Ming Yi Lim" class="hero-photo" width="140" height="140" fetchpriority="high">
-      <div class="hero-id-text">
-        <h1 class="hero-name" data-en="Ming Yi Lim<span>.</span>" data-zh="林明昱<span>.</span>">
-          Ming Yi Lim<span>.</span>
-        </h1>
-        <div class="hero-nickname" data-en="/ Jürgen · Singapore" data-zh="/ Jürgen · 新加坡">/ Jürgen · Singapore</div>
+  <main>
+    <section class="hero" aria-labelledby="name">
+      <img src="/hero-photo.jpg" alt="Ming Yi Lim" class="hero-photo" width="120" height="120" fetchpriority="high">
+      <div class="hero-name-row">
+        <h1 id="name" class="hero-name"><span data-en="Ming Yi Lim" data-zh="林明昱">Ming Yi Lim</span></h1>
+        <span class="seal seal-lg" aria-hidden="true"><span>昱</span><span>印</span><span>林</span><span>明</span></span>
       </div>
-    </div>
-    <p class="hero-tagline lang-fade" data-en="I build marketing systems that <strong>compound</strong> — from zero to 30,000+ search impressions, a cited-source position in Perplexity, and lifecycle automation across 7 APAC markets. I use AI as leverage: to move faster, build more, and document everything." data-zh="我构建持续复利的营销系统——从零开始，在6个月内实现<strong>30,000+次搜索曝光</strong>、获得Perplexity引用位置，并在亚太7个市场建立生命周期自动化体系。我将AI作为杠杆——更快行动、构建更多、记录一切。">
-      I build marketing systems that <strong>compound</strong> — from zero to 30,000+ search impressions, a cited-source position in Perplexity, and lifecycle automation across 7 APAC markets. I use AI as leverage: to move faster, build more, and document everything.
-    </p>
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <span class="hero-stat-num" data-count="30" data-suffix="k+">30k+</span>
-        <span class="hero-stat-label lang-fade" data-en="Impressions in 6 months" data-zh="6个月搜索曝光量">Impressions in 6 months</span>
+      <p class="hero-sub" data-en="Growth and lifecycle marketer in Singapore. Also answers to Jürgen." data-zh="新加坡增长与生命周期营销人。英文名Jürgen。">Growth and lifecycle marketer in Singapore. Also answers to Jürgen.</p>
+      <p class="hero-intro" data-en="I build marketing that keeps working after launch: search that AI answer engines cite, lifecycle flows that protect the list, and events that beat their targets. I use AI to do more of it, and I write down how it works so a team can run it without me in the room." data-zh="我做能在上线后持续运转的营销：被AI答案引擎引用的搜索内容、守护名单质量的生命周期流程，以及超额完成目标的活动。我用AI提高产出，并把方法写成文档，让团队不必依赖我也能运行。">I build marketing that keeps working after launch: search that AI answer engines cite, lifecycle flows that protect the list, and events that beat their targets. I use AI to do more of it, and I write down how it works so a team can run it without me in the room.</p>
+      <ul class="proof">
+        <li><span class="fig" data-en="30,000+" data-zh="30,000+">30,000+</span> <span data-en="search impressions for a brand-new domain in six months" data-zh="次搜索曝光，全新域名六个月内达成">search impressions for a brand-new domain in six months</span></li>
+        <li><span class="fig" data-en="Cited" data-zh="获引用：">Cited</span> <span data-en="by Perplexity as a source for category queries" data-zh="Perplexity类别查询的引用来源">by Perplexity as a source for category queries</span></li>
+        <li><span class="fig" data-en="~2,000" data-zh="~2,000">~2,000</span> <span data-en="delegates at a convention first planned for 1,000 to 1,500" data-zh="名参会者，原定目标为1,000至1,500人">delegates at a convention first planned for 1,000 to 1,500</span></li>
+        <li><span class="fig" data-en="12+" data-zh="12+">12+</span> <span data-en="years across 13+ international markets" data-zh="年经验，覆盖13+个国际市场">years across 13+ international markets</span></li>
+      </ul>
+      <div class="hero-actions">
+        <a href="mailto:mylim92@gmail.com" class="btn btn-solid" data-cta="hero_email" data-en="Email me" data-zh="发邮件给我">Email me</a>
+        <a href="https://www.linkedin.com/in/mingyil" class="btn btn-line" target="_blank" rel="noopener" data-cta="hero_linkedin">LinkedIn</a>
       </div>
-      <div class="hero-divider"></div>
-      <div class="hero-stat">
-        <span class="hero-stat-num" data-count="200" data-suffix="%">200%</span>
-        <span class="hero-stat-label lang-fade" data-en="YoY e-commerce growth" data-zh="电商年增长率">YoY e-commerce growth</span>
-      </div>
-      <div class="hero-divider"></div>
-      <div class="hero-stat">
-        <span class="hero-stat-num" data-count="13" data-suffix="+">13+</span>
-        <span class="hero-stat-label lang-fade" data-en="International markets" data-zh="国际市场">International markets</span>
-      </div>
-      <div class="hero-divider"></div>
-      <div class="hero-stat">
-        <span class="hero-stat-num" data-count="12" data-suffix="+">12+</span>
-        <span class="hero-stat-label lang-fade" data-en="Years experience" data-zh="年从业经验">Years experience</span>
-      </div>
-    </div>
-    <div class="hero-ctas">
-      <a href="mailto:mylim92@gmail.com" class="btn btn-primary" data-cta="hero_email" data-en="Get in touch" data-zh="联系我">Get in touch</a>
-      <a href="https://www.linkedin.com/in/mingyil" target="_blank" rel="noopener" class="btn btn-ghost" data-cta="hero_linkedin" data-en="View LinkedIn" data-zh="查看LinkedIn">View LinkedIn</a>
-      <!-- Resume button: enable once a public resume (no phone number) is added as resume.pdf
-      <a href="./resume.pdf" class="btn btn-ghost" data-cta="hero_resume" data-en="Download resume" data-zh="下载简历">Download resume</a> -->
-    </div>
-    <div class="scroll-hint">
-      <div class="scroll-line"></div>
-      <span data-en="Selected work" data-zh="精选案例">Selected work</span>
-    </div>
-  </section>
+    </section>
 
-  <!-- Work -->
-  <section id="work" style="position:relative">
-    <div style="position:absolute;right:-40px;top:60px;font-family:var(--mono);font-size:320px;font-weight:700;color:var(--teal);opacity:0.025;line-height:1;pointer-events:none;user-select:none;z-index:0">01</div>
-    <div class="section-header">
-      <span class="section-label" data-en="01 / Work" data-zh="01 / 案例">01 / Work</span>
-      <h2 class="section-title lang-fade" data-en="Selected Work" data-zh="精选案例">Selected Work</h2>
-      <div class="section-line"></div>
-    </div>
+    <section id="work" class="block" aria-labelledby="work-title">
+      <h2 class="block-title" id="work-title" data-en="Selected work" data-zh="精选案例">Selected work</h2>
+      <ul class="case-list">
+      <li>
+        <a class="case-row" href="/work/geo" data-cta="row_geo">
+          <span class="row-main">
+            <span class="row-title" data-en="AI Search &amp; AI-Native Marketing" data-zh="AI搜索与AI原生营销">AI Search &amp; AI-Native Marketing</span>
+            <span class="row-hook" data-en="A brand-new domain, cited by AI answer engines within six months." data-zh="一个全新域名，六个月内获得AI答案引擎引用。">A brand-new domain, cited by AI answer engines within six months.</span>
+            <span class="row-meta">Hyve Promo, 2025–2026</span>
+          </span>
+          <span class="row-fig"><span class="fig">30k+</span><span class="fig-label" data-en="search impressions in six months" data-zh="6个月搜索曝光量">search impressions in six months</span></span>
+        </a>
+      </li>
+      <li>
+        <a class="case-row" href="/work/lifecycle" data-cta="row_lifecycle">
+          <span class="row-main">
+            <span class="row-title" data-en="Lifecycle &amp; CRM in Klaviyo" data-zh="Klaviyo生命周期与CRM">Lifecycle &amp; CRM in Klaviyo</span>
+            <span class="row-hook" data-en="Cut 40% of the list before the first send. On purpose." data-zh="首次发送前，主动剔除40%的名单。">Cut 40% of the list before the first send. On purpose.</span>
+            <span class="row-meta">Hyve Promo, 2025–2026</span>
+          </span>
+          <span class="row-fig"><span class="fig">&lt;0.8%</span><span class="fig-label" data-en="bounce rate from the first send" data-zh="首次发送起退信率">bounce rate from the first send</span></span>
+        </a>
+      </li>
+      <li>
+        <a class="case-row" href="/work/events" data-cta="row_events">
+          <span class="row-main">
+            <span class="row-title" data-en="Convention &amp; Event Marketing" data-zh="大会与活动营销">Convention &amp; Event Marketing</span>
+            <span class="row-hook" data-en="Asked for a bigger target. Then hit it." data-zh="主动提高目标，然后达成。">Asked for a bigger target. Then hit it.</span>
+            <span class="row-meta">Best World International, 2021–2025</span>
+          </span>
+          <span class="row-fig"><span class="fig">~2,000</span><span class="fig-label" data-en="delegates in Las Vegas" data-zh="拉斯维加斯大会参会人数">delegates in Las Vegas</span></span>
+        </a>
+      </li>
+      <li>
+        <a class="case-row" href="/work/expansion" data-cta="row_expansion">
+          <span class="row-main">
+            <span class="row-title" data-en="APAC Market Expansion" data-zh="亚太市场拓展">APAC Market Expansion</span>
+            <span class="row-hook" data-en="Localised launches across 6+ new regions, with lead times cut in half." data-zh="在6+个新市场完成本地化落地，交付周期缩短一半。">Localised launches across 6+ new regions, with lead times cut in half.</span>
+            <span class="row-meta">Best World International, 2021–2025</span>
+          </span>
+          <span class="row-fig"><span class="fig">+100%</span><span class="fig-label" data-en="customer acquisition" data-zh="客户获取增长">customer acquisition</span></span>
+        </a>
+      </li>
+      <li>
+        <a class="case-row" href="/work/ecommerce" data-cta="row_ecommerce">
+          <span class="row-main">
+            <span class="row-title" data-en="E-Commerce Growth" data-zh="电商增长">E-Commerce Growth</span>
+            <span class="row-hook" data-en="Four marketplaces from scratch, and 200% growth in a year." data-zh="从零开设四个电商平台店铺，一年增长200%。">Four marketplaces from scratch, and 200% growth in a year.</span>
+            <span class="row-meta">Fill Apac, 2019–2021</span>
+          </span>
+          <span class="row-fig"><span class="fig">200%</span><span class="fig-label" data-en="year-on-year revenue growth" data-zh="年营收增长">year-on-year revenue growth</span></span>
+        </a>
+      </li>
+      </ul>
 
-    <div class="cases work-grid">
-      <a href="/work/geo" class="case-card work-card" data-cta="card_geo">
-        <div class="work-cover work-cover-teal">
-          <span class="work-cover-num">30k+</span>
-          <span class="work-cover-label lang-fade" data-en="search impressions in 6 months" data-zh="6个月搜索曝光量">search impressions in 6 months</span>
-          <span class="work-cover-index">01</span>
-        </div>
-        <div class="work-info">
-          <span class="case-company">HYVE PROMO PTE. LTD. · 2025–2026</span>
-          <h3 class="case-title lang-fade" data-en="AI Search &amp; AI-Native Marketing" data-zh="AI搜索与AI原生营销">AI Search &amp; AI-Native Marketing</h3>
-          <p class="work-hook lang-fade" data-en="A brand-new domain, cited by AI answer engines within six months." data-zh="一个全新域名，六个月内获得AI答案引擎引用。">A brand-new domain, cited by AI answer engines within six months.</p>
-          <span class="work-more lang-fade" data-en="Read the case →" data-zh="查看案例 →">Read the case →</span>
-        </div>
-      </a>
-
-      <a href="/work/lifecycle" class="case-card work-card" data-cta="card_lifecycle">
-        <div class="work-cover work-cover-lime">
-          <span class="work-cover-num">&lt;0.8%</span>
-          <span class="work-cover-label lang-fade" data-en="bounce rate from the first send" data-zh="首次发送起退信率">bounce rate from the first send</span>
-          <span class="work-cover-index">02</span>
-        </div>
-        <div class="work-info">
-          <span class="case-company">HYVE PROMO PTE. LTD. · 2025–2026</span>
-          <h3 class="case-title lang-fade" data-en="Lifecycle &amp; CRM in Klaviyo" data-zh="Klaviyo生命周期与CRM">Lifecycle &amp; CRM in Klaviyo</h3>
-          <p class="work-hook lang-fade" data-en="Cut 40% of the list before the first send. On purpose." data-zh="首次发送前，主动剔除40%的名单。">Cut 40% of the list before the first send. On purpose.</p>
-          <span class="work-more lang-fade" data-en="Read the case →" data-zh="查看案例 →">Read the case →</span>
-        </div>
-      </a>
-
-      <a href="/work/events" class="case-card work-card" data-cta="card_events">
-        <div class="work-cover work-cover-lime">
-          <span class="work-cover-num">~2,000</span>
-          <span class="work-cover-label lang-fade" data-en="Las Vegas 2023 participants" data-zh="2023拉斯维加斯大会参会人数">Las Vegas 2023 participants</span>
-          <span class="work-cover-index">03</span>
-        </div>
-        <div class="work-info">
-          <span class="case-company">BEST WORLD INTERNATIONAL LTD · 2021–2025</span>
-          <h3 class="case-title lang-fade" data-en="Convention &amp; Event Marketing" data-zh="大会与活动营销">Convention &amp; Event Marketing</h3>
-          <p class="work-hook lang-fade" data-en="Asked for a bigger target. Then hit it." data-zh="主动提高目标，然后达成。">Asked for a bigger target. Then hit it.</p>
-          <span class="work-more lang-fade" data-en="Read the case →" data-zh="查看案例 →">Read the case →</span>
-        </div>
-      </a>
-
-      <a href="/work/expansion" class="case-card work-card" data-cta="card_expansion">
-        <div class="work-cover work-cover-lime">
-          <span class="work-cover-num">+100%</span>
-          <span class="work-cover-label lang-fade" data-en="customer acquisition" data-zh="客户获取增长">customer acquisition</span>
-          <span class="work-cover-index">04</span>
-        </div>
-        <div class="work-info">
-          <span class="case-company">BEST WORLD INTERNATIONAL LTD · 2021–2025</span>
-          <h3 class="case-title lang-fade" data-en="APAC Market Expansion" data-zh="亚太市场拓展">APAC Market Expansion</h3>
-          <p class="work-hook lang-fade" data-en="Localised launches across 6+ new regions, with lead times cut in half." data-zh="在6+个新市场完成本地化落地，交付周期缩短一半。">Localised launches across 6+ new regions, with lead times cut in half.</p>
-          <span class="work-more lang-fade" data-en="Read the case →" data-zh="查看案例 →">Read the case →</span>
-        </div>
-      </a>
-
-      <a href="/work/ecommerce" class="case-card work-card" data-cta="card_ecommerce">
-        <div class="work-cover work-cover-teal">
-          <span class="work-cover-num">200%</span>
-          <span class="work-cover-label lang-fade" data-en="YoY revenue growth" data-zh="年营收增长">YoY revenue growth</span>
-          <span class="work-cover-index">05</span>
-        </div>
-        <div class="work-info">
-          <span class="case-company">FILL APAC PTE. LTD. · 2019–2021</span>
-          <h3 class="case-title lang-fade" data-en="E-Commerce Growth" data-zh="电商增长">E-Commerce Growth</h3>
-          <p class="work-hook lang-fade" data-en="Four marketplaces from scratch, and 200% growth in a year." data-zh="从零开设四个电商平台店铺，一年增长200%。">Four marketplaces from scratch, and 200% growth in a year.</p>
-          <span class="work-more lang-fade" data-en="Read the case →" data-zh="查看案例 →">Read the case →</span>
-        </div>
-      </a>
-
-    </div>
-
-    <div class="earlier reveal">
-      <h3 class="earlier-title lang-fade" data-en="Earlier career" data-zh="早期经历">Earlier career</h3>
-      <ol class="earlier-list">
-        <li class="earlier-item">
-          <span class="earlier-years">2017–2019</span>
+      <h3 class="sub-title" data-en="Earlier career" data-zh="早期经历">Earlier career</h3>
+      <ol class="earlier">
+        <li>
+          <span class="when">2017–2019</span>
           <div>
-            <p class="earlier-role lang-fade" data-en="Marketing Lead · Jasper Healthcare · Kuala Lumpur" data-zh="市场负责人 · Jasper Healthcare · 吉隆坡">Marketing Lead · Jasper Healthcare · Kuala Lumpur</p>
-            <p class="earlier-desc lang-fade" data-en="Built the company's first SEO and content programme from nothing and led a website rebuild. <strong>Tripled lead generation in 12 months</strong> through segmentation and targeted acquisition." data-zh="从零建立公司首个SEO与内容体系，并主导网站重建。通过用户细分与精准获客，<strong>12个月内潜在客户量增长至三倍</strong>。">Built the company's first SEO and content programme from nothing and led a website rebuild. <strong>Tripled lead generation in 12 months</strong> through segmentation and targeted acquisition.</p>
+            <p class="earlier-role" data-en="Marketing Lead, Jasper Healthcare, Kuala Lumpur" data-zh="市场负责人，Jasper Healthcare，吉隆坡">Marketing Lead, Jasper Healthcare, Kuala Lumpur</p>
+            <p class="earlier-desc" data-en="Built the company's first SEO and content programme from nothing and led a website rebuild. <strong>Tripled lead generation in 12 months</strong> through segmentation and targeted acquisition." data-zh="从零建立公司首个SEO与内容体系，并主导网站重建。通过用户细分与精准获客，<strong>12个月内潜在客户量增长至三倍</strong>。">Built the company's first SEO and content programme from nothing and led a website rebuild. <strong>Tripled lead generation in 12 months</strong> through segmentation and targeted acquisition.</p>
           </div>
         </li>
-        <li class="earlier-item">
-          <span class="earlier-years">2014–2017</span>
+        <li>
+          <span class="when">2014–2017</span>
           <div>
-            <p class="earlier-role lang-fade" data-en="Sales &amp; Marketing Executive · Nova Mulia Development · Penang" data-zh="销售与市场专员 · Nova Mulia Development · 槟城">Sales &amp; Marketing Executive · Nova Mulia Development · Penang</p>
-            <p class="earlier-desc lang-fade" data-en="Launched the company's first SEO and digital advertising programmes. Google Ads and listing strategies <strong>lifted lead conversions 50%</strong>." data-zh="推出公司首个SEO与数字广告项目。通过Google广告与房源推广策略，<strong>潜在客户转化率提升50%</strong>。">Launched the company's first SEO and digital advertising programmes. Google Ads and listing strategies <strong>lifted lead conversions 50%</strong>.</p>
+            <p class="earlier-role" data-en="Sales &amp; Marketing Executive, Nova Mulia Development, Penang" data-zh="销售与市场专员，Nova Mulia Development，槟城">Sales &amp; Marketing Executive, Nova Mulia Development, Penang</p>
+            <p class="earlier-desc" data-en="Launched the company's first SEO and digital advertising programmes. Google Ads and listing strategies <strong>lifted lead conversions 50%</strong>." data-zh="推出公司首个SEO与数字广告项目。通过Google广告与房源推广策略，<strong>潜在客户转化率提升50%</strong>。">Launched the company's first SEO and digital advertising programmes. Google Ads and listing strategies <strong>lifted lead conversions 50%</strong>.</p>
           </div>
         </li>
-        <li class="earlier-item">
-          <span class="earlier-years">2012–2016</span>
+        <li>
+          <span class="when">2012–2016</span>
           <div>
-            <p class="earlier-role lang-fade" data-en="Co-Founder, Marketing &amp; Design Lead · Awesome International · Penang" data-zh="联合创始人、市场与设计负责人 · Awesome International · 槟城">Co-Founder, Marketing &amp; Design Lead · Awesome International · Penang</p>
-            <p class="earlier-desc lang-fade" data-en="Co-founded a digital tourism and F&amp;B platform, growing traffic 5x over three years with 10+ local business partners. <strong>Raised RM50k by winning the EO Business Plan Competition (Malaysia)</strong> and reached the global final at the New York Stock Exchange." data-zh="联合创办数字旅游与餐饮平台，三年内流量增长5倍，并与10余家本地商户建立合作。<strong>赢得EO商业计划大赛（马来西亚赛区）并获得5万令吉资金</strong>，晋级在纽约证券交易所举行的全球决赛。">Co-founded a digital tourism and F&amp;B platform, growing traffic 5x over three years with 10+ local business partners. <strong>Raised RM50k by winning the EO Business Plan Competition (Malaysia)</strong> and reached the global final at the New York Stock Exchange.</p>
+            <p class="earlier-role" data-en="Co-Founder, Marketing &amp; Design Lead, Awesome International, Penang" data-zh="联合创始人、市场与设计负责人，Awesome International，槟城">Co-Founder, Marketing &amp; Design Lead, Awesome International, Penang</p>
+            <p class="earlier-desc" data-en="Co-founded a digital tourism and F&amp;B platform, growing traffic 5x over three years with 10+ local business partners. <strong>Raised RM50k by winning the EO Business Plan Competition (Malaysia)</strong> and reached the global final at the New York Stock Exchange." data-zh="联合创办数字旅游与餐饮平台，三年内流量增长5倍，并与10余家本地商户建立合作。<strong>赢得EO商业计划大赛（马来西亚赛区）并获得5万令吉资金</strong>，晋级在纽约证券交易所举行的全球决赛。">Co-founded a digital tourism and F&amp;B platform, growing traffic 5x over three years with 10+ local business partners. <strong>Raised RM50k by winning the EO Business Plan Competition (Malaysia)</strong> and reached the global final at the New York Stock Exchange.</p>
           </div>
         </li>
       </ol>
-    </div>
-  </section>
+    </section>
 
-  <!-- About -->
-  <section id="about" style="position:relative">
-    <div style="position:absolute;left:-60px;top:40px;font-family:var(--mono);font-size:320px;font-weight:700;color:var(--teal);opacity:0.025;line-height:1;pointer-events:none;user-select:none;z-index:0">02</div>
-    <div class="section-header">
-      <span class="section-label" data-en="02 / About" data-zh="02 / 关于">02 / About</span>
-      <h2 class="section-title lang-fade" data-en="About" data-zh="关于我">About</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="about-grid reveal">
-      <div class="about-text">
-        <p class="lang-fade"
-          data-en="I'm a growth and lifecycle marketer with <strong>12+ years</strong> across B2B, DTC, and B2B2C. Based in Singapore, open to remote roles across APAC and beyond."
-          data-zh="我是一名拥有<strong>12年以上</strong>B2B、DTC及B2B2C经验的增长与生命周期营销人，现居新加坡，欢迎亚太地区及全球远程机会。">
-          I'm a growth and lifecycle marketer with <strong>12+ years</strong> across B2B, DTC, and B2B2C. Based in Singapore, open to remote roles across APAC and beyond.
-        </p>
-        <p class="lang-fade"
-          data-en="What sets me apart is how I work: I treat marketing like engineering. Every system I build runs on <strong>documented rules</strong>, not tribal knowledge — auditable, handover-ready, and designed to compound over time."
-          data-zh="我的独特之处在于工作方式：我将营销视为工程学。我构建的每个系统都基于<strong>文档化规则</strong>而非隐性知识——可审计、可交接，并随时间持续复利增长。">
-          What sets me apart is how I work: I treat marketing like engineering. Every system I build runs on <strong>documented rules</strong>, not tribal knowledge — auditable, handover-ready, and designed to compound over time.
-        </p>
-        <p class="lang-fade"
-          data-en="Multilingual: English, Mandarin, Malay (fluent); Cantonese, Korean, Japanese (working)."
-          data-zh="多语言能力：英语、普通话、马来语（流利）；粤语、韩语、日语（工作级）。">
-          Multilingual: English, Mandarin, Malay (fluent); Cantonese, Korean, Japanese (working).
-        </p>
-        <p class="lang-fade"
-          data-en="<strong>Education:</strong> Bachelor of Commerce (Accounting), University of Wollongong<br><strong>Certification:</strong> Mini MBA in Marketing (Certificate) · Marketing Week, 2025"
-          data-zh="<strong>学历：</strong>伍伦贡大学商学学士（会计）<br><strong>证书：</strong>Mini MBA in Marketing（结业证书）· Marketing Week，2025年">
-          <strong>Education:</strong> Bachelor of Commerce (Accounting), University of Wollongong<br><strong>Certification:</strong> Mini MBA in Marketing (Certificate) · Marketing Week, 2025
-        </p>
-        <p class="lang-fade" style="font-size:13px; padding: 10px 14px; border-left: 2px solid var(--teal); background: var(--teal-dim); border-radius: 0 6px 6px 0; color: var(--text); margin-top: 8px;"
-          data-en="Currently open to growth, lifecycle, and AI-native marketing roles in Singapore and remote."
-          data-zh="目前开放接受新加坡及远程的增长营销、生命周期营销及AI原生营销职位。">
-          Currently open to growth, lifecycle, and AI-native marketing roles in Singapore and remote.
-        </p>
+    <section id="about" class="block" aria-labelledby="about-title">
+      <h2 class="block-title" id="about-title" data-en="About" data-zh="关于我">About</h2>
+      <div class="prose">
+        <p data-en="I&#x27;m a growth and lifecycle marketer with 12+ years across B2B, DTC and B2B2C, based in Singapore and open to remote roles across APAC and beyond." data-zh="我是一名拥有12年以上B2B、DTC及B2B2C经验的增长与生命周期营销人，现居新加坡，欢迎亚太地区及全球远程机会。">I&#x27;m a growth and lifecycle marketer with 12+ years across B2B, DTC and B2B2C, based in Singapore and open to remote roles across APAC and beyond.</p>
+        <p data-en="I like marketing that&#x27;s written down. Every system I build runs on documented rules rather than what&#x27;s in my head, so anyone can check it, take it over or make it better." data-zh="我喜欢把营销写下来。我构建的每个系统都基于文档化规则，而不是存在我脑中的经验，任何人都能检查、接手或改进。">I like marketing that&#x27;s written down. Every system I build runs on documented rules rather than what&#x27;s in my head, so anyone can check it, take it over or make it better.</p>
+        <p data-en="I work in English, Mandarin and Malay, and have working Cantonese, Korean and Japanese." data-zh="工作语言为英语、普通话和马来语，粤语、韩语和日语为工作水平。">I work in English, Mandarin and Malay, and have working Cantonese, Korean and Japanese.</p>
+        <dl class="facts">
+          <dt data-en="Education" data-zh="学历">Education</dt>
+          <dd data-en="Bachelor of Commerce (Accounting), University of Wollongong" data-zh="伍伦贡大学商学学士（会计）">Bachelor of Commerce (Accounting), University of Wollongong</dd>
+          <dt data-en="Certification" data-zh="证书">Certification</dt>
+          <dd data-en="Mini MBA in Marketing (Certificate), Marketing Week, 2025" data-zh="Mini MBA in Marketing（结业证书），Marketing Week，2025年">Mini MBA in Marketing (Certificate), Marketing Week, 2025</dd>
+          <dt data-en="Tools" data-zh="工具">Tools</dt>
+          <dd>Klaviyo, HubSpot, Shopify Plus, Shopify Admin API, Claude Code, MCP, ChatGPT, Make, n8n, Google Ads, Google Merchant Center, Meta Ads, LinkedIn Ads, GA4, Google Tag Manager, Looker Studio, Power BI, Google Search Console, Ahrefs, SEMrush, Screaming Frog, Microsoft Clarity, Hotjar, SEO / GEO, A/B Testing, Notion, Photoshop, Illustrator, Canva, WordPress, WooCommerce</dd>
+          <dt data-en="Looking for" data-zh="求职方向">Looking for</dt>
+          <dd data-en="Growth, lifecycle and AI-native marketing roles in Singapore or remote" data-zh="新加坡或远程的增长、生命周期及AI原生营销职位">Growth, lifecycle and AI-native marketing roles in Singapore or remote</dd>
+        </dl>
       </div>
-      <div>
-        <p class="stack-title" data-en="Current Stack" data-zh="技术栈">Current Stack</p>
-        <div class="stack-grid">
-          <span class="stack-item">Klaviyo</span>
-          <span class="stack-item">HubSpot</span>
-          <span class="stack-item">Shopify Plus</span>
-          <span class="stack-item">Shopify Admin API</span>
-          <span class="stack-item">Claude Code</span>
-          <span class="stack-item">MCP</span>
-          <span class="stack-item">ChatGPT</span>
-          <span class="stack-item">Make</span>
-          <span class="stack-item">n8n</span>
-          <span class="stack-item">Google Ads</span>
-          <span class="stack-item">Google Merchant Center</span>
-          <span class="stack-item">Meta Ads</span>
-          <span class="stack-item">LinkedIn Ads</span>
-          <span class="stack-item">GA4</span>
-          <span class="stack-item">Google Tag Manager</span>
-          <span class="stack-item">Looker Studio</span>
-          <span class="stack-item">Power BI</span>
-          <span class="stack-item">Google Search Console</span>
-          <span class="stack-item">Ahrefs</span>
-          <span class="stack-item">SEMrush</span>
-          <span class="stack-item">Screaming Frog</span>
-          <span class="stack-item">Microsoft Clarity</span>
-          <span class="stack-item">Hotjar</span>
-          <span class="stack-item">SEO / GEO</span>
-          <span class="stack-item">A/B Testing</span>
-          <span class="stack-item">Notion</span>
-          <span class="stack-item">Photoshop</span>
-          <span class="stack-item">Illustrator</span>
-          <span class="stack-item">Canva</span>
-          <span class="stack-item">WordPress</span>
-          <span class="stack-item">WooCommerce</span>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Contact -->
-  <section id="contact" style="position:relative">
-    <div style="position:absolute;right:-20px;top:20px;font-family:var(--mono);font-size:260px;font-weight:700;color:var(--teal);opacity:0.025;line-height:1;pointer-events:none;user-select:none;z-index:0">03</div>
-    <h2 class="contact-headline reveal lang-fade"
-      data-en="Let's build something that <em>compounds.</em>"
-      data-zh="一起打造持续<em>复利</em>的营销系统。">
-      Let's build something that <em>compounds.</em>
-    </h2>
-    <div class="contact-links reveal">
-      <a href="https://www.linkedin.com/in/mingyil" target="_blank" class="contact-link">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-        </svg>
-        <span>linkedin.com/in/mingyil</span>
-      </a>
-      <a href="mailto:mylim92@gmail.com" class="contact-link">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-        </svg>
-        <span>mylim92@gmail.com</span>
-      </a>
-    </div>
-    <div class="footer-note">
-      <span class="footer-copy" data-en="© 2026 Ming Yi Lim · Singapore" data-zh="© 2026 林明昱 · 新加坡">© 2026 Ming Yi Lim · Singapore</span>
-      <span class="footer-built">Built with <span>Claude Code</span> · Deployed on Vercel</span>
-    </div>
+  <section id="contact" class="contact">
+    <h2 class="contact-title" data-en="Hiring for growth or lifecycle? Let&#x27;s talk." data-zh="正在招聘增长或生命周期营销人才？欢迎联系。">Hiring for growth or lifecycle? Let&#x27;s talk.</h2>
+    <ul class="contact-list">
+      <li><a href="mailto:mylim92@gmail.com" class="contact-link" data-cta="contact_email">mylim92@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/mingyil" class="contact-link" target="_blank" rel="noopener" data-cta="contact_linkedin">linkedin.com/in/mingyil</a></li>
+    </ul>
+    <footer class="foot">
+      <p data-en="© 2026 Ming Yi Lim, Singapore. Built with Claude Code, hosted on Vercel." data-zh="© 2026 林明昱，新加坡。使用Claude Code构建，部署于Vercel。">© 2026 Ming Yi Lim, Singapore. Built with Claude Code, hosted on Vercel.</p>
+    </footer>
   </section>
 
   <script src="/assets/site.js"></script>

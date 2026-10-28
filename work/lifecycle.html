@@ -3,18 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lifecycle & CRM in Klaviyo · Ming Yi Lim</title>
+  <title>Lifecycle &amp; CRM in Klaviyo, Ming Yi Lim</title>
   <meta name="description" content="How Ming Yi Lim built a six-flow Klaviyo lifecycle programme across 7 APAC markets and protected sender reputation by suppressing about 40% of an inherited list before the first send.">
   <link rel="canonical" href="https://mingyilim.vercel.app/work/lifecycle">
+  <meta name="theme-color" content="#F6F7F5">
   <meta property="og:type"        content="article">
   <meta property="og:url"         content="https://mingyilim.vercel.app/work/lifecycle">
-  <meta property="og:title"       content="Lifecycle & CRM in Klaviyo · Ming Yi Lim">
+  <meta property="og:title"       content="Lifecycle &amp; CRM in Klaviyo, Ming Yi Lim">
   <meta property="og:description" content="How Ming Yi Lim built a six-flow Klaviyo lifecycle programme across 7 APAC markets and protected sender reputation by suppressing about 40% of an inherited list before the first send.">
   <meta property="og:image"       content="https://mingyilim.vercel.app/og-image.jpg">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="Lifecycle & CRM in Klaviyo · Ming Yi Lim">
+  <meta name="twitter:title"       content="Lifecycle &amp; CRM in Klaviyo, Ming Yi Lim">
   <meta name="twitter:description" content="How Ming Yi Lim built a six-flow Klaviyo lifecycle programme across 7 APAC markets and protected sender reputation by suppressing about 40% of an inherited list before the first send.">
   <meta name="twitter:image"       content="https://mingyilim.vercel.app/og-image.jpg">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -27,7 +31,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@600;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/site.css">
 
   <!-- Google tag (gtag.js) -->
@@ -39,112 +43,62 @@
     gtag('config', 'G-P1CEV3WPZ0');
   </script>
 </head>
-<body class="case-page">
-
-
-  <div id="scrollProgress" style="position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,var(--teal),var(--lime));z-index:300;transition:width 0.08s linear;"></div>
-  <div class="bg-mesh"></div>
-  <div class="grid-lines"></div>
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
-
-  <!-- Nav -->
-  <nav id="nav">
-    <a href="/" class="nav-logo">M·Y</a>
-    <ul class="nav-links">
-      <li><a href="/#work" data-en="Work" data-zh="案例">Work</a></li>
-      <li><a href="/#about" data-en="About" data-zh="关于">About</a></li>
-      <li><a href="#contact" data-en="Contact" data-zh="联系">Contact</a></li>
-    </ul>
-    <div class="lang-toggle">
-      <button class="lang-btn active" id="btnEn" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" id="btnZh" onclick="setLang('zh')">中文</button>
+<body class="case">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <a href="/" class="brand" aria-label="Ming Yi Lim, home"><span class="seal seal-sm" aria-hidden="true"><span>林</span></span><span class="brand-name">Ming Yi Lim</span></a>
+    <nav class="topnav" aria-label="Main">
+      <a href="/#work" data-en="Work" data-zh="案例">Work</a>
+      <a href="/#about" data-en="About" data-zh="关于">About</a>
+      <a href="#contact" data-en="Contact" data-zh="联系">Contact</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" id="btnEn" class="active" onclick="setLang('en')">EN</button>
+      <button type="button" id="btnZh" onclick="setLang('zh')" lang="zh-Hans">中文</button>
     </div>
-  </nav>
+  </header>
 
+  <main id="main">
+    <article class="case-wrap">
+      <a href="/#work" class="back" data-en="Back to all work" data-zh="返回全部案例">Back to all work</a>
+      <p class="case-meta">Hyve Promo, 2025–2026</p>
+      <h1 class="case-title" data-en="Lifecycle &amp; CRM in Klaviyo" data-zh="Klaviyo生命周期与CRM">Lifecycle &amp; CRM in Klaviyo</h1>
+      <p class="case-hook" data-en="Cut 40% of the list before the first send. On purpose." data-zh="首次发送前，主动剔除40%的名单。">Cut 40% of the list before the first send. On purpose.</p>
+      <p class="case-context" data-en="Klaviyo lifecycle programme, 7 APAC markets" data-zh="Klaviyo生命周期体系，亚太7个市场">Klaviyo lifecycle programme, 7 APAC markets</p>
+      <dl class="case-figs">
+          <div><dt class="fig">6</dt><dd data-en="lifecycle flows built" data-zh="生命周期流程">lifecycle flows built</dd></div>
+          <div><dt class="fig">~40%</dt><dd data-en="inactive contacts suppressed" data-zh="不活跃联系人已抑制">inactive contacts suppressed</dd></div>
+          <div><dt class="fig">&lt;0.8%</dt><dd data-en="bounce rate from first send" data-zh="首次发送起退信率">bounce rate from first send</dd></div>
+          <div><dt class="fig">2.4%</dt><dd data-en="click rate" data-zh="点击率">click rate</dd></div>
+      </dl>
 
-  <main class="case-main">
-    <a href="/#work" class="case-back lang-fade" data-en="← All work" data-zh="← 全部案例">← All work</a>
-
-    <header class="case-hero reveal">
-      <span class="case-company">HYVE PROMO PTE. LTD. · 2025–2026</span>
-      <h1 class="case-page-title lang-fade" data-en="Lifecycle &amp; CRM in Klaviyo" data-zh="Klaviyo生命周期与CRM">Lifecycle &amp; CRM in Klaviyo</h1>
-      <p class="case-hook lang-fade" data-en="Cut 40% of the list before the first send. On purpose." data-zh="首次发送前，主动剔除40%的名单。">Cut 40% of the list before the first send. On purpose.</p>
-      <span class="case-context lang-fade" data-en="Klaviyo lifecycle programme · 7 APAC markets" data-zh="Klaviyo生命周期体系 · 亚太7个市场">Klaviyo lifecycle programme · 7 APAC markets</span>
-      <div class="case-metrics case-metrics-wide">
-            <div class="metric">
-              <span class="metric-num" data-count="6" data-prefix="" data-suffix="">6</span>
-              <span class="metric-label lang-fade" data-en="lifecycle flows built" data-zh="生命周期流程">lifecycle flows built</span>
-            </div>
-            <div class="metric">
-              <span class="metric-num lime">~40%</span>
-              <span class="metric-label lang-fade" data-en="inactive contacts suppressed" data-zh="不活跃联系人已抑制">inactive contacts suppressed</span>
-            </div>
-            <div class="metric">
-              <span class="metric-num lime">&lt;0.8%</span>
-              <span class="metric-label lang-fade" data-en="bounce rate from first send" data-zh="首次发送起退信率">bounce rate from first send</span>
-            </div>
-            <div class="metric">
-              <span class="metric-num">2.4%</span>
-              <span class="metric-label lang-fade" data-en="click rate" data-zh="点击率">click rate</span>
-            </div>
+      <div class="case-body">
+        <h2 data-en="What I did" data-zh="我做了什么">What I did</h2>
+        <p data-en="Built the Klaviyo lifecycle programme across 7 APAC markets from a standing start: <strong>sign-up and activation, welcome, cart and browse abandonment, post-purchase and winback flows</strong>, each with behavioural segmentation. HubSpot stayed the CRM for contacts and pipeline, with reporting syncs the sales team adopted.<br><br>The biggest decision came before any of that went live: what to do with the contact list inherited from HubSpot." data-zh="在亚太7个市场从零搭建Klaviyo生命周期体系：<strong>注册与激活、欢迎、购物车/浏览放弃、购后及召回流程</strong>，并为每个流程配置行为细分。HubSpot继续作为联系人与销售管道的CRM，其报表同步被销售团队采纳。<br><br>上线之前最关键的决定，是如何处理从HubSpot迁移过来的联系人名单。">Built the Klaviyo lifecycle programme across 7 APAC markets from a standing start: <strong>sign-up and activation, welcome, cart and browse abandonment, post-purchase and winback flows</strong>, each with behavioural segmentation. HubSpot stayed the CRM for contacts and pipeline, with reporting syncs the sales team adopted.<br><br>The biggest decision came before any of that went live: what to do with the contact list inherited from HubSpot.</p>
+        <section class="note">
+          <h3 data-en="The Klaviyo fix" data-zh="Klaviyo关键修复">The Klaviyo fix</h3>
+          <p data-en="When migrating the HubSpot database into Klaviyo, business contacts, customers and long-inactive contacts were all mixed into one list. Sending to it as-is would have damaged sender reputation from the first campaign. Before the first send, I built segments separating recent buyers and engaged contacts from everyone else, <strong>suppressed about 40% of the list as inactive</strong>, and sent only to the engaged audience. I also set up sending domain authentication and edited the HTML/CSS of the email templates directly. Bounce rate stayed <strong>under 0.8%</strong> from the first send, and click rate settled at <strong>2.4%</strong>." data-zh="将HubSpot数据库迁移至Klaviyo时，企业联系人、客户与长期不活跃联系人混在同一列表中。若直接发送，首次营销活动就会损害发件人信誉。在首次发送前，我建立细分，将近期购买者与活跃联系人与其他联系人区分开，<strong>将约40%的不活跃联系人设为抑制</strong>，仅向活跃受众发送。我还完成了发件域名认证，并直接编辑邮件模板的HTML/CSS。自首次发送起，退信率始终<strong>低于0.8%</strong>，点击率稳定在<strong>2.4%</strong>。">When migrating the HubSpot database into Klaviyo, business contacts, customers and long-inactive contacts were all mixed into one list. Sending to it as-is would have damaged sender reputation from the first campaign. Before the first send, I built segments separating recent buyers and engaged contacts from everyone else, <strong>suppressed about 40% of the list as inactive</strong>, and sent only to the engaged audience. I also set up sending domain authentication and edited the HTML/CSS of the email templates directly. Bounce rate stayed <strong>under 0.8%</strong> from the first send, and click rate settled at <strong>2.4%</strong>.</p>
+        </section>
+        <p class="case-tools"><span data-en="Tools and skills:" data-zh="工具与技能：">Tools and skills:</span> Klaviyo, Lifecycle Automation, Deliverability, Segmentation, HubSpot, Email</p>
       </div>
-    </header>
 
-    <article class="case-article reveal">
-      <h2 class="case-section-label lang-fade" data-en="What I did" data-zh="我做了什么">What I did</h2>
-      <p class="case-body lang-fade" data-en="Built the Klaviyo lifecycle programme across 7 APAC markets from a standing start: <strong>sign-up and activation, welcome, cart and browse abandonment, post-purchase and winback flows</strong>, each with behavioural segmentation. HubSpot stayed the CRM for contacts and pipeline, with reporting syncs the sales team adopted.<br><br>The biggest decision came before any of that went live: what to do with the contact list inherited from HubSpot." data-zh="在亚太7个市场从零搭建Klaviyo生命周期体系：<strong>注册与激活、欢迎、购物车/浏览放弃、购后及召回流程</strong>，并为每个流程配置行为细分。HubSpot继续作为联系人与销售管道的CRM，其报表同步被销售团队采纳。<br><br>上线之前最关键的决定，是如何处理从HubSpot迁移过来的联系人名单。">Built the Klaviyo lifecycle programme across 7 APAC markets from a standing start: <strong>sign-up and activation, welcome, cart and browse abandonment, post-purchase and winback flows</strong>, each with behavioural segmentation. HubSpot stayed the CRM for contacts and pipeline, with reporting syncs the sales team adopted.<br><br>The biggest decision came before any of that went live: what to do with the contact list inherited from HubSpot.</p>
-
-      <div class="proof-panel case-panel">
-        <div class="proof-label lang-fade" data-en="The Klaviyo fix" data-zh="Klaviyo关键修复">The Klaviyo fix</div>
-        <p class="lang-fade" data-en="When migrating the HubSpot database into Klaviyo, business contacts, customers and long-inactive contacts were all mixed into one list. Sending to it as-is would have damaged sender reputation from the first campaign. Before the first send, I built segments separating recent buyers and engaged contacts from everyone else, <strong>suppressed about 40% of the list as inactive</strong>, and sent only to the engaged audience. I also set up sending domain authentication and edited the HTML/CSS of the email templates directly. Bounce rate stayed <strong>under 0.8%</strong> from the first send, and click rate settled at <strong>2.4%</strong>." data-zh="将HubSpot数据库迁移至Klaviyo时，企业联系人、客户与长期不活跃联系人混在同一列表中。若直接发送，首次营销活动就会损害发件人信誉。在首次发送前，我建立细分，将近期购买者与活跃联系人与其他联系人区分开，<strong>将约40%的不活跃联系人设为抑制</strong>，仅向活跃受众发送。我还完成了发件域名认证，并直接编辑邮件模板的HTML/CSS。自首次发送起，退信率始终<strong>低于0.8%</strong>，点击率稳定在<strong>2.4%</strong>。">When migrating the HubSpot database into Klaviyo, business contacts, customers and long-inactive contacts were all mixed into one list. Sending to it as-is would have damaged sender reputation from the first campaign. Before the first send, I built segments separating recent buyers and engaged contacts from everyone else, <strong>suppressed about 40% of the list as inactive</strong>, and sent only to the engaged audience. I also set up sending domain authentication and edited the HTML/CSS of the email templates directly. Bounce rate stayed <strong>under 0.8%</strong> from the first send, and click rate settled at <strong>2.4%</strong>.</p>
-      </div>
-      <div class="tags">
-          <span class="tag accent">Klaviyo</span>
-          <span class="tag accent">Lifecycle Automation</span>
-          <span class="tag accent">Deliverability</span>
-          <span class="tag">Segmentation</span>
-          <span class="tag">HubSpot</span>
-          <span class="tag">Email</span></div>
+      <p class="next">
+        <span data-en="Next case:" data-zh="下一个案例：">Next case:</span>
+        <a href="/work/events" data-cta="next_events" data-en="Convention &amp; Event Marketing" data-zh="大会与活动营销">Convention &amp; Event Marketing</a>
+      </p>
     </article>
-
-    <div class="case-next reveal">
-      <span class="case-section-label lang-fade" data-en="Next case" data-zh="下一个案例">Next case</span>
-      <a href="/work/events" class="case-next-link" data-cta="next_events">
-        <span class="lang-fade" data-en="Convention &amp; Event Marketing" data-zh="大会与活动营销">Convention &amp; Event Marketing</span>
-        <span aria-hidden="true">→</span>
-      </a>
-    </div>
   </main>
 
-  <!-- Contact -->
-  <section id="contact" style="position:relative">
-    <div style="position:absolute;right:-20px;top:20px;font-family:var(--mono);font-size:260px;font-weight:700;color:var(--teal);opacity:0.025;line-height:1;pointer-events:none;user-select:none;z-index:0">03</div>
-    <h2 class="contact-headline reveal lang-fade"
-      data-en="Let's build something that <em>compounds.</em>"
-      data-zh="一起打造持续<em>复利</em>的营销系统。">
-      Let's build something that <em>compounds.</em>
-    </h2>
-    <div class="contact-links reveal">
-      <a href="https://www.linkedin.com/in/mingyil" target="_blank" class="contact-link">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-        </svg>
-        <span>linkedin.com/in/mingyil</span>
-      </a>
-      <a href="mailto:mylim92@gmail.com" class="contact-link">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-        </svg>
-        <span>mylim92@gmail.com</span>
-      </a>
-    </div>
-    <div class="footer-note">
-      <span class="footer-copy" data-en="© 2026 Ming Yi Lim · Singapore" data-zh="© 2026 林明昱 · 新加坡">© 2026 Ming Yi Lim · Singapore</span>
-      <span class="footer-built">Built with <span>Claude Code</span> · Deployed on Vercel</span>
-    </div>
+  <section id="contact" class="contact">
+    <h2 class="contact-title" data-en="Hiring for growth or lifecycle? Let&#x27;s talk." data-zh="正在招聘增长或生命周期营销人才？欢迎联系。">Hiring for growth or lifecycle? Let&#x27;s talk.</h2>
+    <ul class="contact-list">
+      <li><a href="mailto:mylim92@gmail.com" class="contact-link" data-cta="contact_email">mylim92@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/mingyil" class="contact-link" target="_blank" rel="noopener" data-cta="contact_linkedin">linkedin.com/in/mingyil</a></li>
+    </ul>
+    <footer class="foot">
+      <p data-en="© 2026 Ming Yi Lim, Singapore. Built with Claude Code, hosted on Vercel." data-zh="© 2026 林明昱，新加坡。使用Claude Code构建，部署于Vercel。">© 2026 Ming Yi Lim, Singapore. Built with Claude Code, hosted on Vercel.</p>
+    </footer>
   </section>
-
 
   <script src="/assets/site.js"></script>
 </body>
